@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Servlet</display-name>
+  <!-- HelloController라는 클래스를 hello라는 이름에 servlet으로 하나 만들어낸 것이다 -->
+  <servlet>
+    <!-- servlet이라는 태그 안에 servlet-name이라는 태그를 통해서 이름 하나 지어줄거임
+       우리가 만든 HelloController 라는 클래스가 어떤 기능을 하는 건지를 설명하는 이름 이다. -->
+  	<servlet-name>hello</servlet-name>
+  	<!-- servlet-class 태그 안에다가 클래스 이름을 써주면 됨 + 패키지명 다 써주고 클래스 이름 써줘야 함-->
+  	<servlet-class>com.jinju.servlet.hello.HelloController</servlet-class>
+  </servlet>
+  
+  <!-- 이 servlet을 어떤 주소로 접근하도록 할건지를 정해주는 태그를 구성할거다 -->
+  <servlet-mapping>
+  	<!-- servlet-name : servlet이 여러개 만들어지면 이 여러개 있는 servlet 중에 
+  	어떤 servlet을 지금 사용할거냐? hello라는 servlet을 사용할거다 라는 의미-->
+  	<!-- url-pattern : 주소를 여기다가 부여 /로 꼭 시작을 해야 된다 -->
+  	<servlet-name>hello</servlet-name>
+  	<url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ex01</servlet-name>
+  	<servlet-class>com.jinju.servlet.servlet.ex.Ex01Controller</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ex01</servlet-name>
+  	<url-pattern>/servlet/ex01</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>test02</servlet-name>
+  	<servlet-class>com.jinju.servlet.servlet.test.Test02Controller</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>test02</servlet-name>
+  	<url-pattern>/servlet/test02</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
