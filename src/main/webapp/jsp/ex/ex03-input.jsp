@@ -23,8 +23,18 @@
 		</select>
 		
 		<!-- 라디오 버튼 -->
+		<h3>좋아 하는 동물</h3>
+					<!--  input 태그 자체에 값이 없기 때문에 그냥 선택되었다는 걸 의미하는 on이라는 값만 전달됨 
+						  그래서 각 input들이 어떤 값을 의미하는지를 미리 부여한다 ( value 속성 값 부여 ) -->
+		<label>강아지<input type="radio" name="animal" value="dog"></label>
+		<label>고양이<input type="radio" name="animal" value="cat"></label>
+		<label>사자<input type="radio" name="animal" value="lion"></label>
 		
 		<!-- 체크박스 -->
+		<h3>좋아하는 음식을 모두 고르세요</h3>
+		<label>민트초코<input type="checkbox" name="food" value="민초"></label>
+		<label>하와이안 피자<input type="checkbox" name="food" value="하와이안피자"></label>
+		<label>번데기<input type="checkbox" name="food" value="번데기"></label>
 		
 		<button type="submit">입력</button>
 	</form>
