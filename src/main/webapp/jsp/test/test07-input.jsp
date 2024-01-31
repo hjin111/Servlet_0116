@@ -19,7 +19,12 @@
 		<form method="get" action="/jsp/test/test07.jsp">
 			<div class="d-flex">
 				<input type="text" class="form-control col-4" name="menu"> 
-				<label><input type="checkbox">4점 이하제외</label>
+				<!-- checkbox는 기본적으로 체크가 됐다 라고 하는 정보를 on이라는 값으로 표현 합니다 왜? 해당 input에는 별다른 값이 없으니깐 
+				input type이 text는 사용자가 입력한 값이 있고 그 값을 value로 지정해서 해당하는 값을 name속성의 값으로(이 파라미터 이름으로 )전달을 해줌 
+				input 태그는 value 속성에 있는 값을 값으로 전달해요 -->
+				<!-- on으로 표현되는게 적절하다고 판단 되면 그냥 그래도 쓰면 되고( value 없이 )
+					정해진 값을 부여 하고 싶으면 valuer 값 지정하기 -->
+				<label><input type="checkbox" name="option" >4점 이하제외</label>
 			</div>
 			<button type="submit" class="btn btn-success">검색</button>
 		</form>

@@ -33,8 +33,10 @@
 	    // 웹 페이지에서 파라미터는 request안에 포함된 거를 전달받아서 활용 하는 거기 때문에 
 	    // 서블릿에서는 톰캣이 만들어준 request 객체로부터 파라미터 얻어오면 됨
 	    String menu = request.getParameter("menu");
+	    
+	    // 전달 받을 파라미터 이릅을 지정해놓고 그 이름으로 값을 전달해서 실제 그 값이 어떻게 전달되는지를 한번 보자
+	    String option = request.getParameter("option");
 	%>
-
 	<div class="container">
 		<h1 class="text-center">검색 결과</h1>
 		<table class="table text-center">
@@ -52,14 +54,22 @@
 					// 저장된 값을 리턴 받아서 쓸 때는 String이 아니라 Object 객체가 리턴 됨
 					// 그래서 다운 캐스팅을 해줘야함 
 					String storeMenu = (String)store.get("menu"); // Object에서 String으로 다운 캐스팅 
+					// 메뉴 조건
 					if(storeMenu.equals(menu)){
+						// 가게 정보를 tr 태그로 포함시키는 조건
+						
+						// option이 null 일때
+						// option이 on이고, point가 4.0 이상인 경우
+						double point = (double)store.get("point");
+						if(option == null || ( option.equals("on") && point >= 4.0 )){
 				%>
 				<tr>
 					<td><%= store.get("menu") %></td>
 					<td><%= store.get("name") %></td>
 					<td><%= store.get("point") %></td>
 				</tr>
-				<%}
+				<%		}
+					}
 				} %>
 			</tbody>
 		</table>
